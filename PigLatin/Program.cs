@@ -24,6 +24,7 @@ namespace PigLatin
         private static string TranslateToPigLatin(string input)
         {
             StringBuilder sb = new StringBuilder();
+            StringBuilder consonants = new StringBuilder();
 
             string lower = input.ToLower();
 
@@ -31,6 +32,21 @@ namespace PigLatin
             {
                 sb.Append(lower);
                 sb.Append("way");
+                return sb.ToString();
+            }
+
+            for (int i = 0; i < lower.Length; i++)
+            {
+                if (!vowels.Contains(lower[i].ToString()))
+                {
+                    consonants.Append(lower[i]);
+                }
+                else
+                {
+                    sb.Append(lower.Substring(i));
+                    sb.Append(consonants.ToString());
+                    sb.Append("ay");
+                }
             }
 
             return sb.ToString();
