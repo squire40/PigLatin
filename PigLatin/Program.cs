@@ -44,6 +44,7 @@ namespace PigLatin
                     sb.Append(input.Substring(i));
                     sb.Append(consonants.ToString());
                     sb.Append("ay");
+                    break;
                 }
             }
 
