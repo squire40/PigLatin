@@ -5,6 +5,7 @@ namespace PigLatin
 {
     class Program
     {
+        const string vowels = "aeiou";
         static void Main(string[] args)
         {
             string answer = null;
@@ -13,17 +14,22 @@ namespace PigLatin
                 Console.WriteLine("Enter a word");
                 string input = Console.ReadLine();
                 string output = TranslateToPigLatin(input);
+                Console.WriteLine(output);
+                Console.WriteLine("Continue? y/n");
+                answer = Console.ReadLine();
             } while (answer.ToLower().Equals("y"));
 
         }
 
         private static string TranslateToPigLatin(string input)
         {
-            string result = "";
+            StringBuilder sb = new StringBuilder();
 
             string lower = input.ToLower();
 
-            return result;
+
+
+            return sb.ToString();
         }
     }
 }
