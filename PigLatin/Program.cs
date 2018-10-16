@@ -23,6 +23,10 @@ namespace PigLatin
 
         private static string TranslateToPigLatin(string input)
         {
+            if (!ContainsOnlyLetters(input))
+            {
+                return input;
+            }
             StringBuilder sb = new StringBuilder();
             StringBuilder consonants = new StringBuilder();
 
@@ -49,6 +53,21 @@ namespace PigLatin
             }
 
             return sb.ToString();
+        }
+
+        private static bool ContainsOnlyLetters(string input)
+        {
+            bool result = true;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (!char.IsLetter(input[i]))
+                {
+                    result = false;
+                }
+            }
+
+            return result;
         }
     }
 }
