@@ -9,6 +9,7 @@ namespace PigLatin
         static void Main(string[] args)
         {
             string answer = null;
+            StringBuilder phrase = new StringBuilder();
             do
             {
                 Console.WriteLine("Enter a word");
@@ -19,11 +20,16 @@ namespace PigLatin
                 }
                 else
                 {
-                    string output = TranslateToPigLatin(input);
-                    Console.WriteLine(output);
-                    Console.WriteLine("Continue? y/n");
-                    answer = Console.ReadLine();
+                    var output = input.Split(' ');
+                    foreach (var word in output)
+                    {
+                        phrase.Append($"{TranslateToPigLatin(word)} ");
+                    }
+                    Console.WriteLine(phrase.ToString());
                 }
+
+                Console.WriteLine("Continue? y/n");
+                answer = Console.ReadLine();
             } while (answer.ToLower().Equals("y"));
 
         }
