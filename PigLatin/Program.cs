@@ -10,9 +10,11 @@ namespace PigLatin
         {
             string answer = null;
             StringBuilder phrase = new StringBuilder();
+
+            Console.WriteLine("Welcome to the Pig Latin Translator!");
             do
             {
-                Console.WriteLine("Enter a word");
+                Console.WriteLine("Enter a line to br translated: ");
                 string input = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(input))
                 {
@@ -28,7 +30,7 @@ namespace PigLatin
                     Console.WriteLine(phrase.ToString());
                 }
 
-                Console.WriteLine("Continue? y/n");
+                Console.WriteLine("Translate another line? (y/n): ");
                 answer = Console.ReadLine();
             } while (answer.ToLower().Equals("y"));
 
