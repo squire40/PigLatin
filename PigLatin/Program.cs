@@ -20,6 +20,7 @@ namespace PigLatin
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine("Enter valid input");
+                    answer = "y";
                 }
                 else
                 {
