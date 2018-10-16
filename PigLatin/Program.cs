@@ -9,11 +9,12 @@ namespace PigLatin
         static void Main(string[] args)
         {
             string answer = null;
-            StringBuilder phrase = new StringBuilder();
+            StringBuilder phrase;
 
             Console.WriteLine("Welcome to the Pig Latin Translator!");
             do
             {
+                phrase = new StringBuilder();
                 Console.WriteLine("Enter a line to br translated: ");
                 string input = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(input))
