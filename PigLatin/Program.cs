@@ -27,7 +27,11 @@ namespace PigLatin
 
             string lower = input.ToLower();
 
-
+            if (vowels.Contains(lower[0].ToString()))
+            {
+                sb.Append(lower);
+                sb.Append("way");
+            }
 
             return sb.ToString();
         }
