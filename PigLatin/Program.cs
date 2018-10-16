@@ -13,10 +13,17 @@ namespace PigLatin
             {
                 Console.WriteLine("Enter a word");
                 string input = Console.ReadLine();
-                string output = TranslateToPigLatin(input);
-                Console.WriteLine(output);
-                Console.WriteLine("Continue? y/n");
-                answer = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("Enter valid input");
+                }
+                else
+                {
+                    string output = TranslateToPigLatin(input);
+                    Console.WriteLine(output);
+                    Console.WriteLine("Continue? y/n");
+                    answer = Console.ReadLine();
+                }
             } while (answer.ToLower().Equals("y"));
 
         }
