@@ -26,24 +26,22 @@ namespace PigLatin
             StringBuilder sb = new StringBuilder();
             StringBuilder consonants = new StringBuilder();
 
-            string lower = input.ToLower();
-
-            if (vowels.Contains(lower[0].ToString()))
+            if (vowels.Contains(input[0].ToString().ToLower()))
             {
-                sb.Append(lower);
+                sb.Append(input);
                 sb.Append("way");
                 return sb.ToString();
             }
 
-            for (int i = 0; i < lower.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (!vowels.Contains(lower[i].ToString()))
+                if (!vowels.Contains(input[i].ToString().ToLower()))
                 {
-                    consonants.Append(lower[i]);
+                    consonants.Append(input[i]);
                 }
                 else
                 {
-                    sb.Append(lower.Substring(i));
+                    sb.Append(input.Substring(i));
                     sb.Append(consonants.ToString());
                     sb.Append("ay");
                 }
